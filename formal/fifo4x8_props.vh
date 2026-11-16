@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Formal properties for fifo4x8 (plan property F1). Included inside the module
+// Formal properties for fifo4x8 (property F1). Included inside the module
 // when FORMAL is defined (read_verilog -formal); see formal/README.md.
 //
 // F1: the count never exceeds 4 and never underflows. On top of that the FIFO is
