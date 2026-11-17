@@ -1,7 +1,5 @@
-/*
- * Copyright (c) 2026 VLSI PD Tapeout team
- * SPDX-License-Identifier: Apache-2.0
- */
+// SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
+// SPDX-License-Identifier: Apache-2.0
 
 `default_nettype none
 
@@ -68,7 +66,7 @@ module i2c_ctrl (
   reg       nacked;
   reg       aborting;
   reg       samp;     // SDA sampled at the B -> C tick
-  reg       half;     // START / STOP: first of the two ticks of phase B or C is over.
+  reg       half;     // START / STOP: first of the two ticks of phase B or C is over
                       // Cleared by the tick in phase A, so a new START or an abort needs no reset.
 
   wire on      = (st != C_IDLE);

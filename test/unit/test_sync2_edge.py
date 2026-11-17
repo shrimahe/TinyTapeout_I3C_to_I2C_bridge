@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Unit tests for sync2_edge, built with N=2, INIT=2'b11, FILTER=2'b10.
 Bit 0 is unfiltered; bit 1 has the two-sample glitch filter."""
@@ -32,7 +33,7 @@ async def test_unfiltered_edge_latency(dut):
     await setup(dut)
     dut.d.value = 0b10  # bit 0 falls
     qs, rises, falls = await watch(dut, 0, 6)
-    assert qs.index(0) == 1, f"q[0] samples {qs}"  # visible 2 clocks after the pin changes
+    assert qs.index(0) == 1, f"q[0] samples {qs}"  # Visible 2 clocks after the pin changes
     assert (rises, falls) == (0, 1)
     dut.d.value = 0b11
     qs, rises, falls = await watch(dut, 0, 6)

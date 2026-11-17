@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Slot player that bit-bangs the I3C bus with two GPIOs (MicroPython, any RP2).
 

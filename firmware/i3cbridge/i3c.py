@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """MIPI I3C SDR controller for the I3C -> I2C bridge, in plain Python.
 
@@ -160,10 +161,10 @@ class SlotBus:
         self._mark()
         t = self.flush()[-1]
         if t == 0:
-            self._slot(1, L)  # take over SDA as the target lets go
+            self._slot(1, L)  # Take over SDA as the target lets go
             self._slot(1)
         elif abort:
-            self._slot(1)     # let the target release first
+            self._slot(1)     # Let the target release first
             self._slot(1, L)  # SDA falls while SCL is high: repeated START
         else:
             self._slot(1)

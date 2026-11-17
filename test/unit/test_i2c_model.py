@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Checks the Python I2C target model with the bit-banged I2C controller,
 so later RTL tests can trust both."""

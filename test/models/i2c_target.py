@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Behavioural I2C target (a sensor with a register file) for cocotb tests.
 

@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 // SPDX-License-Identifier: Apache-2.0
 // Formal properties for the whole bridge (plan properties F2-F5 at the pins).
 // Included inside tt_um_i3cbridge when FORMAL is defined. The properties of the

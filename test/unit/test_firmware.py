@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """The RP2 firmware (firmware/i3cbridge) against the RTL.
 
@@ -78,7 +79,7 @@ class SimBoard:
         self.dut.ui_in.value = value
 
     async def _uo(self):
-        await ClockCycles(self.dut.clk, 8)  # let the synchronisers catch up with the last slot
+        await ClockCycles(self.dut.clk, 8)  # Let the synchronisers catch up with the last slot
         return int(self.dut.uo_out.value)
 
 

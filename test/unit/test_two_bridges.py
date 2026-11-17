@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Two bridges on one I3C bus: ENTDAA arbitration by Provisioned ID, both
 addresses usable afterwards, RSTDAA clearing both, and no SDA fights."""

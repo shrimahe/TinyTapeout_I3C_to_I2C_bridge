@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 // SPDX-License-Identifier: Apache-2.0
 // Formal properties for i2c_ctrl: basic safety of the downstream controller.
 // Included inside the module when FORMAL is defined.

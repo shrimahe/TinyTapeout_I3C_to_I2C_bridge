@@ -1,7 +1,5 @@
-/*
- * Copyright (c) 2026 VLSI PD Tapeout team
- * SPDX-License-Identifier: Apache-2.0
- */
+// SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
+// SPDX-License-Identifier: Apache-2.0
 
 `default_nettype none
 
@@ -17,13 +15,13 @@ module sync2_edge #(
     input  wire         clk,
     input  wire         rst_n,
     input  wire [N-1:0] d,     // raw pins
-    output wire [N-1:0] q,     // synchronised level
+    output wire [N-1:0] q,     // Synchronised level
     output wire [N-1:0] rise,  // one-cycle pulse: q went 0 -> 1
     output wire [N-1:0] fall   // one-cycle pulse: q went 1 -> 0
 );
 
   reg [N-1:0] s1, s2, s3;  // synchroniser + one sample of history
-  reg [N-1:0] lvl, lvl_d;  // filtered level and its previous value
+  reg [N-1:0] lvl, lvl_d;  // Filtered level and its previous value
 
   wire [N-1:0] agree = ~(s2 ^ s3);
   wire [N-1:0] lvl_n = (agree & s2) | (~agree & lvl);

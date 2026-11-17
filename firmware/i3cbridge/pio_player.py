@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Slot player with exact timing, on one PIO state machine (MicroPython, RP2040 / RP2350).
 
@@ -52,11 +53,11 @@ class PioPlayer:
         n = 0
         for burst in split_bursts(slots, 32):
             words = (len(burst) + 7) // 8
-            self.sm.active(0)  # load the whole burst (4 words fill the FIFO), then let it run
+            self.sm.active(0)  # Load the whole burst (4 words fill the FIFO), then let it run
             for w in range(words):
                 word = 0
                 for i in range(8):
-                    k = min(w * 8 + i, len(burst) - 1)  # short word: hold the last slot
+                    k = min(w * 8 + i, len(burst) - 1)  # Short word: hold the last slot
                     word |= self._nibble(burst[k]) << (4 * i)
                 self.sm.put(word)
             self.sm.active(1)

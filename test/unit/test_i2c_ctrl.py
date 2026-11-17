@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Unit tests for i2c_ctrl against the Python I2C target model: write, read,
 write-then-read with repeated START, NACK, both SCL rates, START / STOP timing,

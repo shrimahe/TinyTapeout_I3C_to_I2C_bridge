@@ -1,7 +1,5 @@
-/*
- * Copyright (c) 2026 VLSI PD Tapeout team
- * SPDX-License-Identifier: Apache-2.0
- */
+// SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
+// SPDX-License-Identifier: Apache-2.0
 
 `default_nettype none
 
@@ -12,11 +10,11 @@
 module fifo4x8 (
     input  wire       clk,
     input  wire       rst_n,
-    input  wire       clr,    // synchronous clear, wins over push/pop
+    input  wire       clr,    // Synchronous clear, wins over push/pop
     input  wire       push,
     input  wire [7:0] wdata,
     input  wire       pop,
-    output wire [7:0] rdata,  // head byte
+    output wire [7:0] rdata,  // Head byte
     output wire       full,
     output wire       empty,
     output wire [2:0] count   // 0..4

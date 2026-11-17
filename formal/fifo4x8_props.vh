@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 // SPDX-License-Identifier: Apache-2.0
 // Formal properties for fifo4x8 (plan property F1). Included inside the module
 // when FORMAL is defined (read_verilog -formal); see formal/README.md.
@@ -54,7 +55,7 @@ always @(posedge clk) begin
   if (rst_n) begin
     // F1: the count stays in 0..4
     assert (cnt <= 3'd4);
-    // pointers and count agree (count 0 and count 4 both have wp == rp)
+    // Pointers and count agree (count 0 and count 4 both have wp == rp)
     assert (cnt[1:0] == (wp - rp));
     assert (full == (cnt == 3'd4));
     assert (empty == (cnt == 3'd0));

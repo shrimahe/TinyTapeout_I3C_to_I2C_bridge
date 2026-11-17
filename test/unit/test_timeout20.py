@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Unit tests for timeout20 (W = 20). Inputs change on falling edges."""
 import cocotb
@@ -40,7 +41,7 @@ async def test_expires_after_limit(dut):
 async def test_kick_restarts(dut):
     await setup(dut, 10)
     dut.run.value = 1
-    for _ in range(8):  # activity every 8 cycles keeps it alive
+    for _ in range(8):  # Activity every 8 cycles keeps it alive
         assert await expiries(dut, 7) == []
         dut.kick.value = 1
         await FallingEdge(dut.clk)

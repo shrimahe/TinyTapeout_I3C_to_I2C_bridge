@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 // SPDX-License-Identifier: Apache-2.0
 // Formal properties for i3c_tgt (plan properties F2, F3 and F4). Included inside
 // the module when FORMAL is defined.

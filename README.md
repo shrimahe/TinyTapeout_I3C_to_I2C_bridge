@@ -48,17 +48,3 @@ python formal/run.py               # formal proofs
 | `formal/` | SymbiYosys proofs ([formal/README.md](formal/README.md)) |
 | `firmware/` | MicroPython I3C controller and bring-up checklist for the RP2 |
 | `fpga/` | Wrapper for running the design on an FPGA ([docs/fpga_dry_run.md](docs/fpga_dry_run.md)) |
-
-## What is Tiny Tapeout?
-
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
-
-To learn more and get started, visit https://tinytapeout.com.
-
-## Resources
-
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-- [Build your design locally](https://www.tinytapeout.com/guides/local-hardening/)

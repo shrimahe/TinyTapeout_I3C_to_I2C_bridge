@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: © 2026 VLSI PD Tapeout team
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Top-level tests for tt_um_i3cbridge. The TT CI runs these through test/Makefile,
 at RTL and on the gate-level netlist, so they only use pins and tb wires.
@@ -237,7 +237,7 @@ async def test_te2_bad_write_parity(dut):
     await ctl.write_byte(cmd(OP_WRITE, 1))
     await ctl.write_byte(SENSOR)
     await ctl.write_byte(0x07, parity=False)
-    await ctl.write_bit(1 - odd_parity(0x07, 8))  # wrong T-bit
+    await ctl.write_bit(1 - odd_parity(0x07, 8))  # Wrong T-bit
     await ctl.stop()
     await ClockCycles(dut.clk, 10)
     assert uo(dut)["err"] == 1 and uo(dut)["state"] == S_IDLE
@@ -322,7 +322,7 @@ async def test_unsupported_direct_ccc_nacks(dut):
     assert not await ctl.header(DA, 1, od=False)
     await ctl.stop()
     assert uo(dut)["err"] == 0
-    assert await transact(ctl, DA, [cmd(OP_STATUS), 0]) == [0x00]  # normal again after P
+    assert await transact(ctl, DA, [cmd(OP_STATUS), 0]) == [0x00]  # Normal again after P
 
 
 # ---------------------------------------------------------------------- timeouts (RTL only: 35 ms)

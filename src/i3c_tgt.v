@@ -1,7 +1,5 @@
-/*
- * Copyright (c) 2026 VLSI PD Tapeout team
- * SPDX-License-Identifier: Apache-2.0
- */
+// SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
+// SPDX-License-Identifier: Apache-2.0
 
 `default_nettype none
 
@@ -63,13 +61,13 @@ module i3c_tgt (
 
   localparam [3:0] S_IDLE = 4'd0,     // wait for START
                    S_ADDR = 4'd1,     // 7-bit address + R/W
-                   S_ACK = 4'd2,      // driving ACK (open-drain low)
+                   S_ACK = 4'd2,      // Driving ACK (open-drain low)
                    S_CCC = 4'd3,      // CCC code + T
                    S_DAA_ID = 4'd4,   // ENTDAA: PID, BCR, DCR out, open-drain, arbitration
                    S_DAA_ADDR = 4'd5, // ENTDAA: DA + parity in
                    S_PRIV_WR = 4'd6,  // private write bytes + T
                    S_PRIV_RD = 4'd7,  // private read bytes + End-of-Data T
-                   S_HDR = 4'd8,      // ignore everything until the HDR Exit Pattern
+                   S_HDR = 4'd8,      // Ignore everything until the HDR Exit Pattern
                    S_WAIT = 4'd9;     // not addressed, error or lost arbitration: wait for Sr / P
 
   localparam [2:0] A_WAIT = 3'd0, A_CCC = 3'd1, A_DAA = 3'd2, A_PWR = 3'd3, A_PRD = 3'd4;
@@ -82,7 +80,7 @@ module i3c_tgt (
   reg [5:0] cnt;      // bit counter; ENTDAA identity bit index (63..0)
   reg [7:0] sh;
   reg       par;      // XOR of the data bits received so far (odd parity check)
-  reg [2:0] ack_to;   // what follows the ACK being driven
+  reg [2:0] ack_to;   // What follows the ACK being driven
   reg [1:0] ctx;      // CCC context since the last 7E/W: ENTDAA or another direct CCC
   reg       ours;     // a private transfer to us is open
   reg       last;     // the byte being sent is the last one (T = 0)
@@ -216,7 +214,7 @@ module i3c_tgt (
               st <= S_WAIT;
               if (sh == CCC_ENTDAA) ctx <= X_ENTDAA;
               else if (sh[7:3] == 5'b00100) st <= S_HDR;  // ENTHDR0-7
-              else if (sh[7]) ctx <= X_DIRECT;             // unsupported direct CCC
+              else if (sh[7]) ctx <= X_DIRECT;             // Unsupported direct CCC
             end
           end
         end

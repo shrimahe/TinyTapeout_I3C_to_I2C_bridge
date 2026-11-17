@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Unit tests for cmd_ctrl. The test plays the I3C target (private
 write bytes, frame starts / ends, takes) and a fake I2C controller that answers
@@ -193,7 +194,7 @@ async def test_exec_timeout_aborts(dut):
     await env.private_write(cmd(OP_READ, 2), 0x48)
     await env.wait_state(S_RESPOND, limit=1000)
     assert env.aborts == 1 and env.bus_timeouts == 0
-    assert await env.private_read(2) == [(0xEE, 0), (0xEE, 1)]  # what arrived before the stall
+    assert await env.private_read(2) == [(0xEE, 0), (0xEE, 1)]  # What arrived before the stall
     await env.private_write(cmd(OP_STATUS), 0x00)
     await env.wait_state(S_RESPOND)
     assert (await env.private_read(1))[0][0] == TIMEOUT

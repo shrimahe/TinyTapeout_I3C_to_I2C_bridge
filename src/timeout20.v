@@ -1,7 +1,5 @@
-/*
- * Copyright (c) 2026 VLSI PD Tapeout team
- * SPDX-License-Identifier: Apache-2.0
- */
+// SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
+// SPDX-License-Identifier: Apache-2.0
 
 `default_nettype none
 
@@ -15,7 +13,7 @@ module timeout20 #(
     input  wire         clk,
     input  wire         rst_n,
     input  wire         run,      // count while high; the count clears while low
-    input  wire         kick,     // activity seen: restart from zero
+    input  wire         kick,     // Activity seen: restart from zero
     input  wire [W-1:0] limit,    // timeout in clock cycles (0 = never)
     output wire         expired   // one-cycle pulse
 );

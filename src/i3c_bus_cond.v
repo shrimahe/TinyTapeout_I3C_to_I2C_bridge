@@ -1,7 +1,5 @@
-/*
- * Copyright (c) 2026 VLSI PD Tapeout team
- * SPDX-License-Identifier: Apache-2.0
- */
+// SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
+// SPDX-License-Identifier: Apache-2.0
 
 `default_nettype none
 
@@ -15,7 +13,7 @@
 module i3c_bus_cond (
     input  wire clk,
     input  wire rst_n,
-    input  wire scl,       // synchronised levels
+    input  wire scl,       // Synchronised levels
     input  wire sda,
     input  wire scl_rise,  // one-cycle edge pulses from the synchroniser
     input  wire sda_rise,

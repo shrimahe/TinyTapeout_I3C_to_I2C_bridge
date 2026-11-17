@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 // SPDX-License-Identifier: Apache-2.0
 // Formal properties for cmd_ctrl (plan property F4: the timeout ends a stalled
 // I2C transaction). Included inside the module when FORMAL is defined.

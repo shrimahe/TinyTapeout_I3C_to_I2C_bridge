@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Unit tests for i3c_bus_cond, driven by the I3C controller model through the
 synchroniser. Also exercises the model's START/Sr/STOP, SDR bytes and HDR exit."""
@@ -53,7 +54,7 @@ async def test_odd_parity_helper(dut):
 @cocotb.test()
 async def test_start_and_stop(dut):
     ctl, counts = await setup(dut)
-    await ctl.private_write(0x08, [0x12, 0x34])  # nobody ACKs: S, header, P
+    await ctl.private_write(0x08, [0x12, 0x34])  # Nobody ACKs: S, header, P
     await settle(dut)
     assert counts.get() == (1, 1, 0)
 

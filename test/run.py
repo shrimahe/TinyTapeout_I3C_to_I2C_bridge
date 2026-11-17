@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Run the cocotb tests through the Python runner (no make needed, works on Windows).
 
@@ -24,7 +25,7 @@ sys.path.append(str(FIRMWARE))       # the runner hands sys.path to the simulato
 TOP_SOURCES = [SRC / f for f in ("project.v", "sync2_edge.v", "i3c_bus_cond.v", "i3c_tgt.v", "i3c_daa.v",
                                   "cmd_ctrl.v", "fifo4x8.v", "timeout20.v", "clkdiv.v", "i2c_ctrl.v")]
 
-# suite: (hdl toplevel, sources, directory of the test module, test module, parameters)
+# Suite: (hdl toplevel, sources, directory of the test module, test module, parameters)
 SUITES = {
     "top": ("tb", TOP_SOURCES + [TEST / "tb.v"], TEST, "test", {}),
     "i3c_bus_cond": ("tb_i3c_bus_cond", [SRC / "sync2_edge.v", SRC / "i3c_bus_cond.v",

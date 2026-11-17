@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Bit-level MIPI I3C SDR controller model for cocotb tests.
 
@@ -134,10 +135,10 @@ class I3CController:
         t = self._bus()
         self.scl.value = 1
         if t == 0:
-            self._od(0)  # take over SDA as the target lets go
+            self._od(0)  # Take over SDA as the target lets go
             await self._w(2)
         elif abort:
-            await self._w()  # let the target release first
+            await self._w()  # Let the target release first
             self._od(0)      # SDA falls while SCL high: repeated START
             await self._w()
         else:

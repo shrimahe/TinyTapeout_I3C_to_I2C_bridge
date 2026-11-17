@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """What the bring-up script needs from the hardware around the bridge: reset,
 the ui_in pins, the uo_out pins and the GPIO numbers of the I3C bus.

@@ -1,7 +1,5 @@
-/*
- * Copyright (c) 2026 VLSI PD Tapeout team
- * SPDX-License-Identifier: Apache-2.0
- */
+// SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
+// SPDX-License-Identifier: Apache-2.0
 
 `default_nettype none
 
@@ -31,7 +29,7 @@ module cmd_ctrl (
     input wire       par_err,        // I3C parity error (TE1 / TE2)
 
     // Controller -> I3C target (response)
-    output wire [7:0] h_tx_data,  // current response byte
+    output wire [7:0] h_tx_data,  // Current response byte
     output wire       h_tx_last,  // it is the last one: the target ends it with T = 0
     input  wire       h_tx_take,  // the target loaded h_tx_data
     output wire       can_read,   // a response is waiting: ACK DA/R

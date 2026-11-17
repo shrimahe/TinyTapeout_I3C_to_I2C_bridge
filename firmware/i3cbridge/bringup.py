@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Bring-up checklist for the bridge: FPGA dry run now, silicon later.
 
@@ -174,7 +175,7 @@ def run_all(board, player, da=0x09, sensor=0x48, expect=None, inst=2, i2c_fast=F
         bus.write_byte(cmd(OP_WRITE, 1))
         bus.write_byte(sensor)
         bus.write_byte(0x07, parity=False)
-        bus.write_bit(1 - odd_parity(0x07, 8))  # wrong T-bit
+        bus.write_bit(1 - odd_parity(0x07, 8))  # Wrong T-bit
         bus.stop()
         r.check("the write with a bad T-bit was ACKed at the address", ack)
         pins.check("ERR is high and the target is back in IDLE", ERR | STATE, ERR | S_IDLE)

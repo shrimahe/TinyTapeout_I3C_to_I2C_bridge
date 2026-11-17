@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
 # SPDX-License-Identifier: Apache-2.0
 """Host side of the bridge protocol (docs/info.md): a command goes out in a private
 write, the answer comes back in a later private read. While the downstream I2C

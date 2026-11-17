@@ -1,14 +1,16 @@
+// SPDX-FileCopyrightText: © 2026 Vipul S, Shridattha M H, Shreevathsa K, Anay Katti
+// SPDX-License-Identifier: Apache-2.0
+
 `default_nettype none
 `timescale 1ns / 1ps
 
-/* Testbench wrapper for tt_um_i3cbridge.
-   - I3C bus on uio[2] (SCL) and uio[3] (SDA). The test's I3C controller model
-     drives SCL push-pull and SDA open-drain or push-pull; SDA has a pull-up.
-     i3c_sda_conflict flags two drivers fighting (one high, one low).
-   - Downstream I2C bus on uio[6] (SCL) and uio[7] (SDA): open-drain with
-     pull-ups; an external device pulls low through i2c_scl_pull / i2c_sda_pull.
-   - Other bidirectional pins loop the design's output back when it drives them.
-*/
+// Testbench wrapper for tt_um_i3cbridge.
+// - I3C bus on uio[2] (SCL) and uio[3] (SDA). The test's I3C controller model
+//   drives SCL push-pull and SDA open-drain or push-pull; SDA has a pull-up.
+//   i3c_sda_conflict flags two drivers fighting (one high, one low).
+// - Downstream I2C bus on uio[6] (SCL) and uio[7] (SDA): open-drain with
+//   pull-ups; an external device pulls low through i2c_scl_pull / i2c_sda_pull.
+// - Other bidirectional pins loop the design's output back when it drives them.
 module tb ();
 
   initial begin
