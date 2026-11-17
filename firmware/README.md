@@ -5,13 +5,16 @@ SDR controller for the board's RP2 (RP2350 on the current demo board, RP2040 on
 older ones, or a bare Raspberry Pi Pico). It is MicroPython, the language the
 demo board ships with, so nothing has to be compiled.
 
+Step-by-step instructions for the FPGA dry run are in
+[docs/fpga_dry_run.md](../docs/fpga_dry_run.md).
+
 ## Files
 
 | File | What it does | Checked how |
 | --- | --- | --- |
 | `i3cbridge/i3c.py` | I3C frames: START / Sr / STOP, 7E headers, CCCs, ENTDAA, private write and read with End-of-Data and abort, HDR entry, traffic and exit | Against the RTL in simulation |
 | `i3cbridge/bridge.py` | The bridge's command protocol: write, read, write-then-read, status, I2C scan | Against the RTL in simulation |
-| `i3cbridge/bringup.py` | The bring-up checklist and the SCL rate sweep | Against the RTL in simulation |
+| `i3cbridge/bringup.py` | The bring-up checklist (plan section 15) and the SCL rate sweep | Against the RTL in simulation |
 | `i3cbridge/players.py` | Puts the bus on two GPIOs by bit-banging | Not run on hardware yet |
 | `i3cbridge/pio_player.py` | Same, with exact timing on a PIO state machine (for the rate sweep) | Experimental, not run on hardware yet |
 | `i3cbridge/boards.py` | Reset, `ui_in`, `uo_out` and clock on the demo board (TT SDK) or a bare Pico | Not run on hardware yet |
@@ -23,7 +26,7 @@ place of the GPIOs. It runs the whole checklist with and without an I2C sensor
 and with the bus cut into the bursts the PIO player uses. Run it with:
 
 ```bash
-python test/run.py -k firmware
+.venv/Scripts/python test/run.py -k firmware
 ```
 
 So if the checklist fails on hardware, look first at the three files that could
@@ -87,8 +90,9 @@ bringup.sweep(lambda hz: PioPlayer(board.scl_gpio, board.sda_gpio, hz), 0x09)
 
 ## Notes
 
-- The firmware is MicroPython: it is what the demo board runs, it works on both
-  the RP2040 and the RP2350, and the same source is simulated against the RTL.
+- The plan (v1.2, section 13) proposed C on the Pico SDK. MicroPython was chosen
+  instead: it is what the demo board runs, it works on both the RP2040 and the
+  RP2350, and the same source can be simulated against the RTL.
 - The demo board SDK gives the RP2 pins a pull-down by default. `TTDemoBoard`
   turns on pull-ups for the downstream I2C lines (`uio[6]`, `uio[7]`) so an empty
   bus idles high; `BitBangPlayer` does the same for I3C SDA.

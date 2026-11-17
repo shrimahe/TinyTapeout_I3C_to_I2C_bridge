@@ -1,3 +1,12 @@
+<!---
+
+This file is used to generate your project datasheet. Please fill in the information below and delete any unused
+sections.
+
+You can also include images in this folder and reference them in the markdown. Each image must be less than
+512 kb in size, and the combined size of all images must be less than 1 MB.
+-->
+
 ## How it works
 
 The bridge is a minimal MIPI I3C Basic SDR target. An I3C controller gives it a
@@ -19,17 +28,6 @@ read address and the controller retries; `IRQ` shows when the response is ready.
 
 The downstream bus runs at 99.2 kHz (`I2C_FAST` = 0) or 367.6 kHz (`I2C_FAST` = 1).
 START and STOP timing meets the I2C specification (UM10204) in both modes.
-
-After ENTDAA the target identifies itself as follows:
-
-| Field | Value |
-| --- | --- |
-| PID[47:33] manufacturer ID | 0x7FFF (no MIPI-assigned ID) |
-| PID[32] ID type | 0 (fixed value) |
-| PID[31:16] part ID | 0x0001 |
-| PID[15:12] instance | {2'b00, `PID_INST[1:0]`} |
-| PID[11:0] vendor defined | 0x000 |
-| BCR / DCR | 0x01 (target, data-speed limitation) / 0x00 (generic) |
 
 Supported: 7'h7E broadcast, private write/read, ENTDAA, RSTDAA,
 odd-parity T-bits, End-of-Data, HDR entry detection and HDR exit.
@@ -63,4 +61,4 @@ The I3C bus must run at 1 MHz or slower (BCR bit 0 advertises the limit).
 
 We gratefully acknowledge the Center of Excellence (CoE) in Integrated Circuits and Systems (ICAS) and the Department of Electronics and Communication Engineering (ECE) for providing the necessary resources and guidance.
 
-Special thanks to Dr. H V Ravish Aradhya (HoD - ECE), Dr. K R Usha Rani (Associate Dean - PG), Dr. K. S. Geetha (Vice Principal) and Dr. K. N. Subramanya (Principal) for their constant encouragement and support in facilitating this Tiny Tapeout SKY26e submission.
+Special thanks to Dr. H V Ravish Aradhya (HoD - ECE), Dr. K. S. Geetha (Vice Principal) and Dr. K. N. Subramanya (Principal) for their constant encouragement and support in facilitating this Tiny Tapeout SKY26E submission.

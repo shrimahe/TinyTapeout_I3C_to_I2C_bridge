@@ -6,7 +6,7 @@
 `default_nettype none
 
 // tt_um_i3cbridge on any FPGA board, for the dry run when the Tiny Tapeout FPGA
-// breakout is not at hand.
+// breakout is not at hand (docs/fpga_dry_run.md, option B).
 //
 // The design expects 25 MHz: the I2C rates (99.2 / 367.6 kHz) and the 35 ms
 // timeout are counted in clock cycles. CLK_DIV divides the board clock:

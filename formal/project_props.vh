@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Formal properties for the whole bridge (properties F2-F5 at the pins).
+// Formal properties for the whole bridge (plan properties F2-F5 at the pins).
 // Included inside tt_um_i3cbridge when FORMAL is defined. The properties of the
 // sub-modules are included too, so formal/project.sby re-checks them in place.
 

@@ -1,6 +1,6 @@
 # Formal proofs (SymbiYosys)
 
-Properties F1 to F5, proved for every reachable state, not only for
+Properties F1 to F5 of the plan, proved for every reachable state, not only for
 the cases a test happens to drive.
 
 ```bash

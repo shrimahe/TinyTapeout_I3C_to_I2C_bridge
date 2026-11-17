@@ -15,7 +15,7 @@
 //   PID[15:12] instance ID           {2'b00, inst}
 //   PID[11:0]  vendor defined        0x000
 //   BCR 0x01 (target, max data speed limitation), DCR 0x00 (generic)
-// Identity values are listed in docs/info.md.
+// Values proposed in docs/architecture.md; confirm with the team before tapeout.
 module i3c_daa (
     input wire clk,
     input wire rst_n,

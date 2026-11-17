@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Formal properties for timeout20 (part of property F4: the timer bounds
+// Formal properties for timeout20 (part of plan property F4: the timer bounds
 // every wait it watches). Included inside the module when FORMAL is defined.
 
 reg fv_past = 1'b0;

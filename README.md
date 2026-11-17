@@ -1,4 +1,4 @@
-![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg)
+![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
 
 # Minimal I3C target to I2C bridge
 
@@ -18,7 +18,8 @@ the result with a private read.
 - `i2c_ctrl`: the downstream I2C controller at 99.2 kHz or 367.6 kHz, with clock stretching.
   A 35 ms timeout aborts a transfer that stalls.
 
-Pinout, command format, status bits and identity are in [docs/info.md](docs/info.md).
+Pinout, command format and status bits are in [docs/info.md](docs/info.md); design notes
+are in [docs/architecture.md](docs/architecture.md).
 
 ## How to test
 
@@ -46,7 +47,7 @@ python formal/run.py               # formal proofs
 | `test/` | cocotb testbench (`tb.v`, `test.py`), unit tests and bus models |
 | `formal/` | SymbiYosys proofs ([formal/README.md](formal/README.md)) |
 | `firmware/` | MicroPython I3C controller and bring-up checklist for the RP2 |
-| `fpga/` | Wrapper for running the design on an FPGA board |
+| `fpga/` | Wrapper for running the design on an FPGA ([docs/fpga_dry_run.md](docs/fpga_dry_run.md)) |
 
 ## What is Tiny Tapeout?
 

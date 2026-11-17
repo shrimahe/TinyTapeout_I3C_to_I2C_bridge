@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Bring-up checklist for the bridge: FPGA dry run now, silicon later.
 
-run_all() walks the bring-up steps and prints one PASS / FAIL
+run_all() walks the steps of the plan (section 15) and prints one PASS / FAIL
 line per check. It needs a board (boards.py: reset, ui_in, uo_out) and a player
 (players.py). The simulation runs the same function against the RTL
 (test/unit/test_firmware.py), so a FAIL on hardware points at the hardware
@@ -204,7 +204,7 @@ def run_all(board, player, da=0x09, sensor=0x48, expect=None, inst=2, i2c_fast=F
 
 def sweep(make_player, da, rates=(100_000, 200_000, 400_000, 600_000, 800_000, 1_000_000, 1_250_000, 1_500_000,
                                  2_000_000), rounds=20, out=print):
-    """Find the highest I3C SCL rate that still works.
+    """Step 7 of the plan: find the highest I3C SCL rate that still works.
     make_player(scl_hz) returns a timing-accurate player (pio_player.PioPlayer).
     The bridge must already have its dynamic address. Returns {rate: good rounds}."""
     result = {}

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Formal properties for i3c_tgt (properties F2, F3 and F4). Included inside
+// Formal properties for i3c_tgt (plan properties F2, F3 and F4). Included inside
 // the module when FORMAL is defined.
 
 reg fv_past = 1'b0;

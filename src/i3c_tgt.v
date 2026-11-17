@@ -5,14 +5,14 @@
 
 `default_nettype none
 
-// Minimal MIPI I3C Basic SDR target (state numbers: docs/info.md).
+// Minimal MIPI I3C Basic SDR target (docs/architecture.md, "Target FSM").
 // Works on the synchronised SCL / SDA and the bus conditions from i3c_bus_cond.
 //
 // Supported: 7'h7E broadcast (always ACKed), private write / read to the
 // dynamic address, ENTDAA with arbitration, RSTDAA, ENTHDR0-7 (ignore until the
 // HDR Exit Pattern), parity errors TE1-TE3. Other CCCs: broadcast ones are
 // ignored, direct ones (SETDASA included) get the dynamic address NACKed.
-// SETDASA and TE0 detection were removed to fit the tile.
+// SETDASA and TE0 detection were removed to fit the tile (docs/architecture.md).
 //
 // SDA driver: open-drain phases (ACK, ENTDAA identity) only ever pull low;
 // push-pull phases (read data and T-bits) drive both levels. The drive changes

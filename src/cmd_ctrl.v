@@ -14,7 +14,7 @@
 // Status byte: [7] I2C NACK, [6] I3C parity error, [5] FIFO overflow,
 //              [4] timeout, [3] reserved (0), [2:0] FIFO count.
 //
-// One 20-bit inactivity timer covers two waits (see docs/info.md):
+// One 20-bit inactivity timer covers two waits (docs/architecture.md, Timeouts):
 //  - EXEC: the I2C transaction stalled -> pulse d_abort, respond with timeout set.
 //  - otherwise, while the I3C target is mid-transfer: SCL stopped -> bus_timeout,
 //    and the target releases SDA and goes back to IDLE.

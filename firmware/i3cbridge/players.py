@@ -6,7 +6,7 @@ out at a few kHz to a few tens of kHz, which the bridge accepts (its only limits
 are SCL <= 1 MHz and no pause longer than 35 ms inside a transfer).
 
 SDA uses the RP2's internal pull-up, which is enough at these rates. For the fast
-player (pio_player.py) fit the 2.2 kOhm pull-up.
+player (pio_player.py) fit the 2.2 kOhm pull-up from the plan.
 """
 from machine import Pin
 from time import sleep_us
