@@ -88,15 +88,3 @@ from i3cbridge.pio_player import PioPlayer
 bringup.sweep(lambda hz: PioPlayer(board.scl_gpio, board.sda_gpio, hz), 0x09)
 ```
 
-## Notes
-
-- The plan (v1.2, section 13) proposed C on the Pico SDK. MicroPython was chosen
-  instead: it is what the demo board runs, it works on both the RP2040 and the
-  RP2350, and the same source can be simulated against the RTL.
-- The demo board SDK gives the RP2 pins a pull-down by default. `TTDemoBoard`
-  turns on pull-ups for the downstream I2C lines (`uio[6]`, `uio[7]`) so an empty
-  bus idles high; `BitBangPlayer` does the same for I3C SDA.
-- A pause longer than 35 ms inside a transfer (for example a long garbage
-  collection) makes the bridge give up on that transfer. The commands in
-  `bridge.py` are retried by polling, so this shows up as a slower answer, not as
-  an error.
